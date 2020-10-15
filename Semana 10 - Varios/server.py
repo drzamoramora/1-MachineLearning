@@ -20,11 +20,11 @@ class Predict(Resource):
     def post():
         # parametros
         parser = reqparse.RequestParser()
-        parser.add_argument('petal_length')
-        parser.add_argument('petal_width')
         parser.add_argument('sepal_length')
         parser.add_argument('sepal_width')
-
+        parser.add_argument('petal_length')
+        parser.add_argument('petal_width')
+        
         # request para el modelo
         args = parser.parse_args() 
         datos = np.fromiter(args.values(), dtype=float) 
